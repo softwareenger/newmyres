@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:background="@drawable/background" >
+    
+ 
+		<EditText
+		android:id="@+id/Message"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:gravity="left|top"
+		android:hint="input message"
+		android:layout_centerHorizontal="true"
+		android:layout_marginTop="46dp"
+		android:maxLength="150"
+		android:background="@drawable/edit"
+		android:ems="13"
+		android:minLines="7"
+		android:maxLines="6"
+		android:padding="5dp"
+		android:paddingLeft="10dp"
+		android:textSize="20dp"
+		 />
+
+	
+	
+    <Button
+	android:id="@+id/Sure"
+	android:layout_centerHorizontal="true"
+	android:ems="13"
+	android:layout_below="@+id/Message"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:layout_gravity="center_vertical"
+	android:layout_marginTop="100dp"
+	android:background="@drawable/button"
+	android:text="sure" 
+	android:textColor="#FFFFFF"/>
+
+</RelativeLayout>

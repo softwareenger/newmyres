@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background" >
+
+        <Button
+            android:id="@+id/Clr"
+            android:layout_width="100dp"
+            android:layout_height="70dp"
+            android:layout_below="@+id/Define"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/myzs"
+            android:ems="11"
+            android:text="Clear"
+            android:textColor="#FFFFFF"
+            android:textSize="18dp" />
+
+        <Button
+            android:id="@+id/Ban"
+            android:layout_width="67dp"
+            android:layout_height="67dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="46dp"
+            android:background="@drawable/button_circular_ban"
+            android:text="Start" 
+            android:textColor="#FFFFFF"/>
+
+        <Button
+            android:id="@+id/Statue"
+            android:layout_width="100dp"
+            android:layout_height="70dp"
+            android:layout_alignRight="@+id/LTime"
+            android:layout_below="@+id/Ban"
+            android:layout_marginRight="28dp"
+            android:background="@drawable/myds"
+            android:ems="11"
+            android:text="Statue"
+            android:textColor="#FFFFFF"
+            android:textSize="18dp" />
+
+        <Button
+            android:id="@+id/RTime"
+            android:layout_width="100dp"
+            android:layout_height="70dp"
+            android:layout_below="@+id/Clr"
+            android:layout_marginTop="16dp"
+            android:layout_toRightOf="@+id/Statue"
+            android:background="@drawable/fmygs"
+            android:ems="11"
+            android:text="RTime"
+            android:textColor="#FFFFFF"
+            android:textSize="18dp" />
+
+        <Button
+            android:id="@+id/LTime"
+            android:layout_width="100dp"
+            android:layout_height="70dp"
+            android:layout_alignBaseline="@+id/RTime"
+            android:layout_alignBottom="@+id/RTime"
+            android:layout_alignRight="@+id/Ban"
+            android:layout_marginRight="35dp"
+            android:background="@drawable/mygs"
+            android:ems="11"
+            android:text="LTime"
+            android:textColor="#FFFFFF"
+            android:textSize="18dp" />
+
+        <Button
+            android:id="@+id/Define"
+            android:layout_width="100dp"
+            android:layout_height="70dp"
+            android:layout_alignBaseline="@+id/Statue"
+            android:layout_alignBottom="@+id/Statue"
+            android:layout_alignLeft="@+id/RTime"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/fmyds"
+            android:ems="11"
+            android:text="Update"
+            android:textColor="#FFFFFF"
+            android:textSize="18dp" />
+
+<LinearLayout 
+    android:id="@+id/ly"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/RTime"
+    android:orientation="vertical"
+     >
+          <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        
+        android:text="phone"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:id="@+id/check1"
+        android:checked="true"/>
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        
+        android:text="message"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:id="@+id/check2"
+        android:checked="true"/>
+
+
+	
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        
+        android:text="application"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:id="@+id/check3"
+        android:checked="true"/>
+    
+    </LinearLayout>
+</RelativeLayout>

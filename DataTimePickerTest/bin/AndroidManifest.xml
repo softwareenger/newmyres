@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.test.milk"
+    android:versionCode="1"
+    android:versionName="1.0" >
+    <!--允许应用程序改变网络状态-->    
+<uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>    
+    
+<!--允许应用程序改变WIFI连接状态-->    
+<uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>    
+    
+<!--允许应用程序访问有关的网络信息-->    
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>    
+    
+<!--允许应用程序访问WIFI网卡的网络信息-->    
+<uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>    
+    
+<!--允许应用程序完全使用网络-->    
+<uses-permission android:name="android.permission.INTERNET"/>    
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.SENSOR_INFO" />  
+    <uses-permission android:name="android.permission.SENSOR_ENABLE" />  
+	<uses-permission android:name="android.permission.GET_TASKS" />   
+	<uses-permission android:name="android.permission.PACKAGE_USAGE_STATS"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.SEND_SMS" />
+	<uses-permission android:name="android.permission.INTERNET"/>
+	<uses-permission android:name="android.permission.INTERNET" />
+	 <!-- 呼出电话拦截 -->
+    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS"/>
+    
+	<uses-permission android:name="android.permission.CALL_PHONE"/>  
+    <!-- 读取手机状态的权限 -->  
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />  
+    <!-- 读content的权限 -->  
+    <uses-permission android:name="android.permission.READ_CONTACTS" />  
+    <uses-permission android:name="android.permission.RECEIVE_SMS"/>  
+	<uses-permission android:name="android.permission.GET_TASKS"/> 
+    
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="22" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/myicon"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        
+          <activity
+            android:name=".AppCheck"
+            android:label="@string/app_name" >
+            <intent-filter>
+            
+            </intent-filter>
+        
+            
+            
+		</activity>
+         <activity
+            android:name=".Divide"
+            android:label="@string/app_name" >
+            <intent-filter>
+              	
+            </intent-filter>
+        
+		</activity>
+		
+         
+          <activity
+            android:name=".Play"
+            android:label="@string/app_name" >
+            <intent-filter>
+              	
+            </intent-filter>
+        
+		</activity>
+		
+           <activity
+            android:name=".Mouse"
+            android:label="@string/app_name" >
+            <intent-filter>
+              
+            </intent-filter>
+        
+		</activity>
+        
+               <activity
+            android:name=".Communicate"
+            android:label="@string/app_name" >
+            <intent-filter>
+              
+            </intent-filter>
+        
+		</activity>
+		
+       <activity
+            android:name=".Start"
+            android:label="Start" >
+            <intent-filter>
+           	 <action android:name="android.intent.action.MAIN" />
+				 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+       
+         <activity
+            android:name=".MainActivity"
+            android:label="MainActivity" >
+            <intent-filter>
+             
+            </intent-filter>
+        </activity>
+       
+       
+       <activity
+            android:name=".Login"
+            android:label="Login" >
+            <intent-filter>
+             
+            </intent-filter>
+        </activity>
+        
+         
+         
+        <activity
+            android:name=".Register"
+            android:label="@string/app_name" >
+            <intent-filter>
+                
+            </intent-filter>
+        </activity>
+       
+       <activity
+            android:name=".Index"
+            android:label="Index" >
+            <intent-filter>
+           
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".CallManager"
+            android:label="CallManager" >
+            <intent-filter>
+          
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MessManager"
+            android:label="MessManager" >
+            <intent-filter>
+          
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name=".Ban"
+            android:label="Ban" >
+            <intent-filter>
+             
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name=".Select"
+            android:label="Select" >
+            <intent-filter>
+          
+            </intent-filter>
+        </activity>
+   
+        
+        
+        <service 
+            android:name = ".LockService">
+       
+        </service>
+        
+        
+         <service 
+            android:name = ".Task">
+       
+        </service>
+         
+        
+    </application>
+
+</manifest>
