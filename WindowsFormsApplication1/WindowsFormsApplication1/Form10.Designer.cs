@@ -39,9 +39,9 @@
             // 
             // buttonReturn
             // 
-            this.buttonReturn.Location = new System.Drawing.Point(178, 191);
+            this.buttonReturn.Location = new System.Drawing.Point(183, 193);
             this.buttonReturn.Name = "buttonReturn";
-            this.buttonReturn.Size = new System.Drawing.Size(75, 23);
+            this.buttonReturn.Size = new System.Drawing.Size(75, 57);
             this.buttonReturn.TabIndex = 0;
             this.buttonReturn.Text = "返回";
             this.buttonReturn.UseVisualStyleBackColor = true;
@@ -49,7 +49,7 @@
             // 
             // buttonLink
             // 
-            this.buttonLink.Location = new System.Drawing.Point(178, 116);
+            this.buttonLink.Location = new System.Drawing.Point(183, 114);
             this.buttonLink.Name = "buttonLink";
             this.buttonLink.Size = new System.Drawing.Size(75, 23);
             this.buttonLink.TabIndex = 2;
@@ -59,7 +59,7 @@
             // 
             // textIP
             // 
-            this.textIP.Location = new System.Drawing.Point(65, 116);
+            this.textIP.Location = new System.Drawing.Point(77, 116);
             this.textIP.Name = "textIP";
             this.textIP.Size = new System.Drawing.Size(100, 21);
             this.textIP.TabIndex = 3;
@@ -67,7 +67,7 @@
             // 
             // textPORT
             // 
-            this.textPORT.Location = new System.Drawing.Point(65, 157);
+            this.textPORT.Location = new System.Drawing.Point(77, 157);
             this.textPORT.Name = "textPORT";
             this.textPORT.Size = new System.Drawing.Size(100, 21);
             this.textPORT.TabIndex = 4;
@@ -76,20 +76,20 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(23, 116);
+            this.label1.Location = new System.Drawing.Point(6, 121);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(17, 12);
+            this.label1.Size = new System.Drawing.Size(53, 12);
             this.label1.TabIndex = 5;
-            this.label1.Text = "IP";
+            this.label1.Text = "IP地址：";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 157);
+            this.label2.Location = new System.Drawing.Point(6, 160);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(29, 12);
+            this.label2.Size = new System.Drawing.Size(65, 12);
             this.label2.TabIndex = 6;
-            this.label2.Text = "端口";
+            this.label2.Text = "端口地址：";
             // 
             // Textshow
             // 
@@ -111,7 +111,10 @@
             this.Controls.Add(this.textIP);
             this.Controls.Add(this.buttonLink);
             this.Controls.Add(this.buttonReturn);
+            this.MaximumSize = new System.Drawing.Size(300, 301);
+            this.MinimumSize = new System.Drawing.Size(300, 301);
             this.Name = "Form10";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form10";
             this.ResumeLayout(false);
             this.PerformLayout();

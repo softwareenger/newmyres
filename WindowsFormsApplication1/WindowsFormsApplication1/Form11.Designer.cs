@@ -57,7 +57,7 @@
             // 
             // textIP
             // 
-            this.textIP.Location = new System.Drawing.Point(56, 144);
+            this.textIP.Location = new System.Drawing.Point(68, 142);
             this.textIP.Name = "textIP";
             this.textIP.Size = new System.Drawing.Size(142, 21);
             this.textIP.TabIndex = 3;
@@ -67,17 +67,17 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(28, 147);
+            this.label2.Location = new System.Drawing.Point(12, 147);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(17, 12);
+            this.label2.Size = new System.Drawing.Size(53, 12);
             this.label2.TabIndex = 5;
-            this.label2.Text = "IP";
+            this.label2.Text = "IP地址：";
             // 
             // TextMsg
             // 
             this.TextMsg.Location = new System.Drawing.Point(30, 12);
             this.TextMsg.Name = "TextMsg";
-            this.TextMsg.Size = new System.Drawing.Size(168, 126);
+            this.TextMsg.Size = new System.Drawing.Size(180, 126);
             this.TextMsg.TabIndex = 7;
             this.TextMsg.Text = "";
             // 
@@ -91,7 +91,10 @@
             this.Controls.Add(this.textIP);
             this.Controls.Add(this.buttonLink);
             this.Controls.Add(this.buttonReturn);
+            this.MaximumSize = new System.Drawing.Size(318, 233);
+            this.MinimumSize = new System.Drawing.Size(318, 233);
             this.Name = "Form11";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form11";
             this.ResumeLayout(false);
             this.PerformLayout();

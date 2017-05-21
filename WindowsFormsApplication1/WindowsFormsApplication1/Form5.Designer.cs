@@ -119,7 +119,10 @@
             this.Controls.Add(this.textWork);
             this.Controls.Add(this.textAge);
             this.Controls.Add(this.textName);
+            this.MaximumSize = new System.Drawing.Size(300, 301);
+            this.MinimumSize = new System.Drawing.Size(300, 301);
             this.Name = "Form5";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form5";
             this.ResumeLayout(false);
             this.PerformLayout();

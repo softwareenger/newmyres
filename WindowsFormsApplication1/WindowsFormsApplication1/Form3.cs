@@ -25,7 +25,7 @@ namespace WindowsFormsApplication1
         }
 
 
-        /*浏览用户*/
+  
         private void buttonCheckUser_Click(object sender, EventArgs e)
         {
             Form4 f4 = new Form4(this);
@@ -34,7 +34,6 @@ namespace WindowsFormsApplication1
 
         }
 
-        /*添加用户*/
         private void buttonAddUser_Click(object sender, EventArgs e)
         {
             Form6 f6 = new Form6(this);

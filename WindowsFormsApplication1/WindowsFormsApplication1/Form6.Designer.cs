@@ -36,7 +36,7 @@
             // 
             // buttonReturn
             // 
-            this.buttonReturn.Location = new System.Drawing.Point(253, 201);
+            this.buttonReturn.Location = new System.Drawing.Point(289, 195);
             this.buttonReturn.Name = "buttonReturn";
             this.buttonReturn.Size = new System.Drawing.Size(75, 23);
             this.buttonReturn.TabIndex = 0;
@@ -48,13 +48,13 @@
             // 
             this.listView1.Location = new System.Drawing.Point(12, 12);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(235, 259);
+            this.listView1.Size = new System.Drawing.Size(271, 261);
             this.listView1.TabIndex = 1;
             this.listView1.UseCompatibleStateImageBehavior = false;
             // 
             // buttonSure
             // 
-            this.buttonSure.Location = new System.Drawing.Point(254, 53);
+            this.buttonSure.Location = new System.Drawing.Point(289, 53);
             this.buttonSure.Name = "buttonSure";
             this.buttonSure.Size = new System.Drawing.Size(75, 23);
             this.buttonSure.TabIndex = 2;
@@ -64,7 +64,7 @@
             // 
             // buttonUnsure
             // 
-            this.buttonUnsure.Location = new System.Drawing.Point(254, 122);
+            this.buttonUnsure.Location = new System.Drawing.Point(289, 116);
             this.buttonUnsure.Name = "buttonUnsure";
             this.buttonUnsure.Size = new System.Drawing.Size(75, 23);
             this.buttonUnsure.TabIndex = 3;
@@ -76,12 +76,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(340, 283);
+            this.ClientSize = new System.Drawing.Size(395, 333);
             this.Controls.Add(this.buttonUnsure);
             this.Controls.Add(this.buttonSure);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.buttonReturn);
+            this.MaximumSize = new System.Drawing.Size(411, 372);
+            this.MinimumSize = new System.Drawing.Size(411, 372);
             this.Name = "Form6";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form6";
             this.Load += new System.EventHandler(this.Form6_Load);
             this.ResumeLayout(false);

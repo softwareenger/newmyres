@@ -20,7 +20,7 @@ namespace WindowsFormsApplication1
         }
 
 
-        /*留给Form2的*/
+      
         public void change() 
         {
             
@@ -31,12 +31,12 @@ namespace WindowsFormsApplication1
         {
             if (DialogResult.OK == MessageBox.Show("你确定要关闭应用程序吗？", "关闭提示", MessageBoxButtons.OKCancel, MessageBoxIcon.Question))
             {
-                this.FormClosing -= new FormClosingEventHandler(this.Form1_FormClosing);//为保证Application.Exit();时不再弹出提示，所以将FormClosing事件取消
-                Application.Exit();//退出整个应用程序
+                this.FormClosing -= new FormClosingEventHandler(this.Form1_FormClosing);
+                Application.Exit();
             }
             else
             {
-                e.Cancel = true;  //取消关闭事件
+                e.Cancel = true;  
             }
         }        
 
@@ -56,6 +56,10 @@ namespace WindowsFormsApplication1
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
+
+          
+
+
             MySqlDataReader dgv = MySqlHelper.ExecuteReader(MySqlHelper.Conn, CommandType.Text, "select * from person", null);
             int ok = 0;
             while (dgv.Read())
@@ -82,6 +86,7 @@ namespace WindowsFormsApplication1
             {
                 MessageBox.Show("登陆失败");
             }
+            
         }
 
         private void textUser_TextChanged(object sender, EventArgs e)

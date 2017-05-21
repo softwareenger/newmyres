@@ -27,12 +27,12 @@ namespace WindowsFormsApplication1
         {
             listView1.View = View.Details;
             
-            this.listView1.Columns.Add("用户", 50, HorizontalAlignment.Left); //一步添加 
-            this.listView1.Columns.Add("姓名", 50, HorizontalAlignment.Left); //一步添加 
-            this.listView1.Columns.Add("工作职位", 50, HorizontalAlignment.Left); //一步添加 
-            this.listView1.Columns.Add("状态", 50, HorizontalAlignment.Left); //一步添加 
+            this.listView1.Columns.Add("用户", 50, HorizontalAlignment.Left); 
+            this.listView1.Columns.Add("姓名", 50, HorizontalAlignment.Left); 
+            this.listView1.Columns.Add("工作职位", 80, HorizontalAlignment.Left);  
+            this.listView1.Columns.Add("状态", 50, HorizontalAlignment.Left); 
 
-            this.listView1.BeginUpdate();   //数据更新，UI暂时挂起，直到EndUpdate绘制控件，可以有效避免闪烁并大大提高加载速度 
+            this.listView1.BeginUpdate();    
 
             MySqlDataReader dgv = MySqlHelper.ExecuteReader(MySqlHelper.Conn, CommandType.Text, "select * from infomation", null);
             int tot = 0;
@@ -56,7 +56,7 @@ namespace WindowsFormsApplication1
 
             dgv.Close();
 
-            this.listView1.EndUpdate();  //结束数据处理，UI界面一次性绘制。 
+            this.listView1.EndUpdate();   
         }
 
         private void buttonReturn_Click(object sender, EventArgs e)

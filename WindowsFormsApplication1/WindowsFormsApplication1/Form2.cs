@@ -39,7 +39,7 @@ namespace WindowsFormsApplication1
         }
         
 
-        /*用户管理按钮*/
+
         private void buttonUser_Click(object sender, EventArgs e)
         {
             Form3 f3 = new Form3(this);

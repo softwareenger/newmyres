@@ -37,6 +37,7 @@
             // 
             // button2
             // 
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Location = new System.Drawing.Point(36, 100);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
@@ -47,6 +48,7 @@
             // 
             // buttonCommunicate
             // 
+            this.buttonCommunicate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCommunicate.Location = new System.Drawing.Point(155, 100);
             this.buttonCommunicate.Name = "buttonCommunicate";
             this.buttonCommunicate.Size = new System.Drawing.Size(75, 23);
@@ -67,6 +69,7 @@
             // 
             // buttonExe
             // 
+            this.buttonExe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonExe.Location = new System.Drawing.Point(155, 47);
             this.buttonExe.Name = "buttonExe";
             this.buttonExe.Size = new System.Drawing.Size(75, 23);
@@ -77,6 +80,7 @@
             // 
             // buttonMouse
             // 
+            this.buttonMouse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonMouse.Location = new System.Drawing.Point(36, 47);
             this.buttonMouse.Name = "buttonMouse";
             this.buttonMouse.Size = new System.Drawing.Size(75, 23);
@@ -95,7 +99,10 @@
             this.Controls.Add(this.buttonReturn);
             this.Controls.Add(this.buttonCommunicate);
             this.Controls.Add(this.button2);
+            this.MaximumSize = new System.Drawing.Size(308, 305);
+            this.MinimumSize = new System.Drawing.Size(308, 305);
             this.Name = "Form2";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form2";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form2_FormClosing);
             this.Load += new System.EventHandler(this.Form2_Load);

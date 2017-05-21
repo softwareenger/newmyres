@@ -31,11 +31,13 @@
             this.buttonCheckUser = new System.Windows.Forms.Button();
             this.buttonAddUser = new System.Windows.Forms.Button();
             this.buttonReturn = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // buttonCheckUser
             // 
-            this.buttonCheckUser.Location = new System.Drawing.Point(42, 63);
+            this.buttonCheckUser.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonCheckUser.Location = new System.Drawing.Point(37, 120);
             this.buttonCheckUser.Name = "buttonCheckUser";
             this.buttonCheckUser.Size = new System.Drawing.Size(75, 23);
             this.buttonCheckUser.TabIndex = 0;
@@ -45,7 +47,8 @@
             // 
             // buttonAddUser
             // 
-            this.buttonAddUser.Location = new System.Drawing.Point(164, 63);
+            this.buttonAddUser.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonAddUser.Location = new System.Drawing.Point(165, 120);
             this.buttonAddUser.Name = "buttonAddUser";
             this.buttonAddUser.Size = new System.Drawing.Size(75, 23);
             this.buttonAddUser.TabIndex = 1;
@@ -55,7 +58,8 @@
             // 
             // buttonReturn
             // 
-            this.buttonReturn.Location = new System.Drawing.Point(99, 139);
+            this.buttonReturn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonReturn.Location = new System.Drawing.Point(104, 207);
             this.buttonReturn.Name = "buttonReturn";
             this.buttonReturn.Size = new System.Drawing.Size(75, 23);
             this.buttonReturn.TabIndex = 2;
@@ -63,17 +67,32 @@
             this.buttonReturn.UseVisualStyleBackColor = true;
             this.buttonReturn.Click += new System.EventHandler(this.buttonReturn_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe Print", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(30, 30);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(247, 37);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "欢迎进入用户管理系统";
+            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(292, 266);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonReturn);
             this.Controls.Add(this.buttonAddUser);
             this.Controls.Add(this.buttonCheckUser);
+            this.MaximumSize = new System.Drawing.Size(308, 305);
+            this.MinimumSize = new System.Drawing.Size(308, 305);
             this.Name = "Form3";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form3";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -82,5 +101,6 @@
         private System.Windows.Forms.Button buttonCheckUser;
         private System.Windows.Forms.Button buttonAddUser;
         private System.Windows.Forms.Button buttonReturn;
+        private System.Windows.Forms.Label label1;
     }
 }

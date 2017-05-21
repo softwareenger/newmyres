@@ -35,8 +35,7 @@ namespace WindowsFormsApplication1
 
 
 
-
-        //结构体布局 本机位置
+        
         [StructLayout(LayoutKind.Sequential)]
         struct NativeRECT
         {
@@ -46,37 +45,37 @@ namespace WindowsFormsApplication1
             public int bottom;
         }
 
-        //将枚举作为位域处理
+  
         [Flags]
-        enum MouseEventFlag : uint //设置鼠标动作的键值
+        enum MouseEventFlag : uint 
         {
-            Move = 0x0001,               //发生移动
-            LeftDown = 0x0002,           //鼠标按下左键
-            LeftUp = 0x0004,             //鼠标松开左键
-            RightDown = 0x0008,          //鼠标按下右键
-            RightUp = 0x0010,            //鼠标松开右键
-            MiddleDown = 0x0020,         //鼠标按下中键
-            MiddleUp = 0x0040,           //鼠标松开中键
+            Move = 0x0001,               
+            LeftDown = 0x0002,           
+            LeftUp = 0x0004,           
+            RightDown = 0x0008,         
+            RightUp = 0x0010,          
+            MiddleDown = 0x0020,        
+            MiddleUp = 0x0040,           
             XDown = 0x0080,
             XUp = 0x0100,
-            Wheel = 0x0800,              //鼠标轮被移动
-            VirtualDesk = 0x4000,        //虚拟桌面
+            Wheel = 0x0800,              
+            VirtualDesk = 0x4000,        
             Absolute = 0x8000
         }
 
-        //设置鼠标位置
+     
         [DllImport("user32.dll")]
         static extern bool SetCursorPos(int X, int Y);
 
-        //设置鼠标按键和动作
+   
         [DllImport("user32.dll")]
         static extern void mouse_event(MouseEventFlag flags, int dx, int dy,
-            uint data, UIntPtr extraInfo); //UIntPtr指针多句柄类型
+            uint data, UIntPtr extraInfo); 
 
         [DllImport("user32.dll")]
         static extern IntPtr FindWindow(string strClass, string strWindow);
 
-        //该函数获取一个窗口句柄,该窗口雷鸣和窗口名与给定字符串匹配 hwnParent=Null从桌面窗口查找
+      
         [DllImport("user32.dll")]
         static extern IntPtr FindWindowEx(IntPtr hwndParent, IntPtr hwndChildAfter,
             string strClass, string strWindow);
@@ -90,11 +89,11 @@ namespace WindowsFormsApplication1
         [DllImport("user32.dll")] private static extern void mouse_event(int dwFlags, int dx, int dy, int dwData, int dwExtraInfo);
         [DllImport("user32.dll")] private static extern void keybd_event(byte bVk, byte bScan, uint dwFlags, uint dwExtraInfo);
         [DllImport("user32.dll")] private static extern bool SetWindowPos(IntPtr hWnd, IntPtr hWndlnsertAfter, int X, int Y, int cx, int cy, uint Flags);
-        //ShowWindow参数
+   
         private const int SW_SHOWNORMAL = 1;
         private const int SW_RESTORE = 9;
         private const int SW_SHOWNOACTIVATE = 4;
-        //SendMessage参数
+ 
         private const int WM_KEYDOWN = 0X100;
         private const int WM_KEYUP = 0X101;
         private const int WM_SYSCHAR = 0X106;
@@ -114,61 +113,63 @@ namespace WindowsFormsApplication1
 
         
         bool IsUdpcRecvStart = false;
-        /// <summary>
-        /// 线程：不断监听UDP报文
-        /// </summary>
+        
         Thread thrRecv;
 
-        /// <summary>
-        /// 按钮：接收数据开关
-        /// </summary>
+       
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void buttonLink_Click(object sender, EventArgs e)
         {
-          
-            if (!IsUdpcRecvStart) // 未监听的情况，开始监听
+            try
             {
-
-                IPHostEntry ipe = Dns.GetHostEntry(Dns.GetHostName());
-                IPAddress ipa = ipe.AddressList[1];
-
-                if (textIP.Text != "如果填写0则使用默认" && textIP.Text != "")
+                if (!IsUdpcRecvStart) 
                 {
-                    IP = textIP.Text;
+
+                    IPHostEntry ipe = Dns.GetHostEntry(Dns.GetHostName());
+                    IPAddress ipa = ipe.AddressList[2];
+
+                    if (textIP.Text != "如果填写0则使用默认" && textIP.Text != "")
+                    {
+                        IP = textIP.Text;
+                    }
+                    else
+                    {
+                        IP = ipa.ToString();
+                    }
+
+
+                    IPEndPoint localIpep = new IPEndPoint(IPAddress.Parse(IP), 9876); 
+
+
+                    udpcRecv = new UdpClient(localIpep);
+
+                    thrRecv = new Thread(ReceiveMessage);
+                    thrRecv.Start();
+
+                    IsUdpcRecvStart = true;
+                    TextMsg.Text += "UDP监听器已成功启动\n";
+
                 }
-                else
+                else                  
                 {
-                    IP = ipa.ToString();
+                    thrRecv.Abort(); 
+                    udpcRecv.Close();
+
+                    IsUdpcRecvStart = false;
+                    TextMsg.Text += "UDP监听器已成功关闭\n";
+
                 }
-
-
-                IPEndPoint localIpep = new IPEndPoint(IPAddress.Parse(IP), 9876); // 本机IP和监听端口号
-
-
-                udpcRecv = new UdpClient(localIpep);
-
-                thrRecv = new Thread(ReceiveMessage);
-                thrRecv.Start();
-
-                IsUdpcRecvStart = true;
-                TextMsg.Text += "UDP监听器已成功启动\n";
-
             }
-            else                  // 正在监听的情况，终止监听
+            catch (Exception ex)
             {
-                thrRecv.Abort(); // 必须先关闭这个线程，否则会异常
-                udpcRecv.Close();
+                ShowMessage(TextMsg, "连接已经断开。");
 
-                IsUdpcRecvStart = false;
-                TextMsg.Text += "UDP监听器已成功关闭\n";
-
+             
             }
         }
        
-        /// <summary>
-        /// 接收数据
-        /// </summary>
+       
         /// <param name="obj"></param>
         private void ReceiveMessage(object obj)
         {
@@ -193,7 +194,7 @@ namespace WindowsFormsApplication1
                     {
                         message = tmessage;
                     }
-                    /*kind == 1 为重力*/
+                
 
                     string[] A = message.Split(' ');
                     if (kx == 1)
@@ -204,12 +205,12 @@ namespace WindowsFormsApplication1
                         ShowMessage(TextMsg, A[1]);
                         if (y <= -15)
                         {   
-                            IntPtr myIntPtr = FindWindow(null, "Super Mario Bross Forever"); //null为类名，可以用Spy++得到，也可以为空
-                            ShowWindow(myIntPtr, SW_RESTORE); //将窗口还原
-                            SetForegroundWindow(myIntPtr); //如果没有ShowWindow，此方法不能设置最小化的窗口
+                            IntPtr myIntPtr = FindWindow(null, "Super Mario Bross Forever");
+                            ShowWindow(myIntPtr, SW_RESTORE); 
+                            SetForegroundWindow(myIntPtr); 
                             SendKeys.SendWait("+");
                         }
-                        //ShowMessage(txtRecvMssg, message);
+                    
                     }
                     else
                     {
@@ -219,16 +220,16 @@ namespace WindowsFormsApplication1
                         
                         if (x > 0)
                         {
-                            IntPtr myIntPtr = FindWindow(null, "Super Mario Bross Forever"); //null为类名，可以用Spy++得到，也可以为空
-                            ShowWindow(myIntPtr, SW_RESTORE); //将窗口还原
-                            SetForegroundWindow(myIntPtr); //如果没有ShowWindow，此方法不能设置最小化的窗口
+                            IntPtr myIntPtr = FindWindow(null, "Super Mario Bross Forever"); 
+                            ShowWindow(myIntPtr, SW_RESTORE); 
+                            SetForegroundWindow(myIntPtr); 
                             SendKeys.SendWait("{LEFT}");
                         }
                         else
                         {
-                            IntPtr myIntPtr = FindWindow(null, "Super Mario Bross Forever"); //null为类名，可以用Spy++得到，也可以为空
-                            ShowWindow(myIntPtr, SW_RESTORE); //将窗口还原
-                            SetForegroundWindow(myIntPtr); //如果没有ShowWindow，此方法不能设置最小化的窗口
+                            IntPtr myIntPtr = FindWindow(null, "Super Mario Bross Forever"); 
+                            ShowWindow(myIntPtr, SW_RESTORE); 
+                            SetForegroundWindow(myIntPtr); 
                             SendKeys.SendWait("{RIGHT}");
                         }
                         
@@ -237,7 +238,7 @@ namespace WindowsFormsApplication1
                 }
                 catch (Exception ex)
                 {
-                    ShowMessage(TextMsg, "错误了");
+                    ShowMessage(TextMsg, "连接已经断开。");
 
                     break;
                 }
@@ -251,7 +252,7 @@ namespace WindowsFormsApplication1
         }
 
  
-        // 向TextBox中添加文本
+  
         delegate void ShowMessageDelegate(RichTextBox txtbox, string message);
 
     
@@ -278,6 +279,8 @@ namespace WindowsFormsApplication1
             }
 
         }
+
+      
     }
 
 

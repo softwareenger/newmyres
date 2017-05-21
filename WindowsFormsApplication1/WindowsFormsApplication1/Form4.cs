@@ -44,8 +44,8 @@ namespace WindowsFormsApplication1
 
         private void myList1_Load(object sender, EventArgs e)
         {
-            myList1.HorizontalScroll.Enabled = false;//横的
-            myList1.VerticalScroll.Enabled = true;//竖的
+            myList1.HorizontalScroll.Enabled = false;
+            myList1.VerticalScroll.Enabled = true;
         }
     }
 }
