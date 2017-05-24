@@ -81,6 +81,11 @@ namespace WindowsFormsApplication1
             MySqlHelper.ExecuteNonQuery(MySqlHelper.Conn, CommandType.Text, command, null);
         }
 
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            label1.Text = DateTime.Now.ToString();
+        }
+
    
     }
 }

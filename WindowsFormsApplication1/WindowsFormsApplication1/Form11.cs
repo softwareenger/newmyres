@@ -174,7 +174,7 @@ namespace WindowsFormsApplication1
         private void ReceiveMessage(object obj)
         {
             IPEndPoint remoteIpep = new IPEndPoint(IPAddress.Any, 0);
-            double x, y, z;
+            double x, y;
             while (true)
             {
                 try

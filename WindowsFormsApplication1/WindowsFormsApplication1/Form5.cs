@@ -60,5 +60,15 @@ namespace WindowsFormsApplication1
             Person.work = textWork.Text;
             use = true;
         }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            label1.Text = DateTime.Now.ToString();
+        }
+
+        private void Form5_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
+
 namespace WindowsFormsApplication1
 {
 
@@ -75,6 +76,7 @@ namespace WindowsFormsApplication1
                 }
             }
             dgv.Close();
+          
             if (ok == 0)
             {
                 MessageBox.Show("登陆成功");
@@ -137,6 +139,11 @@ namespace WindowsFormsApplication1
                 MessageBox.Show("注册失败,信息不完善\n");
             }
 
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            label4.Text = DateTime.Now.ToString();
         }
     }
 }
