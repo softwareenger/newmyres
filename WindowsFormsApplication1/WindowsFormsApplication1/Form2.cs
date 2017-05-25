@@ -80,15 +80,5 @@ namespace WindowsFormsApplication1
             this.Hide();
             f12.Show();
         }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            label2.Text = DateTime.Now.ToString();
-        }
     }
 }

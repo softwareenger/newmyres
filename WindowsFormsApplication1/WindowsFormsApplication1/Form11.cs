@@ -127,7 +127,7 @@ namespace WindowsFormsApplication1
                 {
 
                     IPHostEntry ipe = Dns.GetHostEntry(Dns.GetHostName());
-                    IPAddress ipa = ipe.AddressList[2];
+                    IPAddress ipa = ipe.AddressList[ClassVar.id ];
 
                     if (textIP.Text != "如果填写0则使用默认" && textIP.Text != "")
                     {
@@ -149,7 +149,7 @@ namespace WindowsFormsApplication1
 
                     IsUdpcRecvStart = true;
                     TextMsg.Text += "UDP监听器已成功启动\n";
-
+                    TextMsg.Text += "当前IP为" + IPAddress.Parse(IP).ToString() + "\n";
                 }
                 else                  
                 {
@@ -174,7 +174,7 @@ namespace WindowsFormsApplication1
         private void ReceiveMessage(object obj)
         {
             IPEndPoint remoteIpep = new IPEndPoint(IPAddress.Any, 0);
-            double x, y;
+            double x, y, z;
             while (true)
             {
                 try
@@ -202,7 +202,7 @@ namespace WindowsFormsApplication1
                        
 
                         y = Convert.ToDouble(A[1]);
-                        ShowMessage(TextMsg, A[1]);
+                       // ShowMessage(TextMsg, A[1]);
                         if (y <= -15)
                         {   
                             IntPtr myIntPtr = FindWindow(null, "Super Mario Bross Forever");
@@ -280,7 +280,10 @@ namespace WindowsFormsApplication1
 
         }
 
-      
+        private void TextMsg_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 
 

@@ -37,6 +37,7 @@ import com.baoyz.swipemenulistview.SwipeMenu;
 import com.baoyz.swipemenulistview.SwipeMenuCreator;
 import com.baoyz.swipemenulistview.SwipeMenuItem;
 import com.baoyz.swipemenulistview.SwipeMenuListView;
+import com.test.milk.Play.MyThreadSend;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -98,7 +99,7 @@ public class Mouse extends Activity implements OnClickListener{
     Socket socket = null;  
     String buffer = "";  
     TextView txt1;  
-    Button send,link;  
+    Button send,link,Lhit,Rhit;  
     EditText ed1;  
     String geted1;  
     
@@ -153,6 +154,8 @@ public class Mouse extends Activity implements OnClickListener{
         
         
         txt1 = (TextView) findViewById(R.id.txt1);  
+        Lhit = (Button) findViewById(R.id.Lhit);  
+        Rhit = (Button) findViewById(R.id.Rhit); 
         send = (Button) findViewById(R.id.send);  
         link = (Button) findViewById(R.id.link);  
         ed1 = (EditText) findViewById(R.id.ed1); 
@@ -162,7 +165,32 @@ public class Mouse extends Activity implements OnClickListener{
         accelerometerSensor = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
         gyroscopeSensor = sensorManager.getDefaultSensor(Sensor.TYPE_GYROSCOPE);
         
-   
+        Lhit.setOnClickListener(new OnClickListener()
+        {  
+            @Override  
+            public void onClick(View v)
+            {  
+            	String str = "*";
+        		if(pv>=1){
+        			MyThreadSend th = new MyThreadSend(str);
+        			th.start();
+        			pv--;
+        		}
+            }  
+        });  	
+        Rhit.setOnClickListener(new OnClickListener()
+        {  
+            @Override  
+            public void onClick(View v)
+            {  
+            	String str = "/";
+        		if(pv>=1){
+        			MyThreadSend th = new MyThreadSend(str);
+        			th.start();
+        			pv--;
+        		}
+            }  
+        });  	
 
         
         listener = new SensorEventListener()

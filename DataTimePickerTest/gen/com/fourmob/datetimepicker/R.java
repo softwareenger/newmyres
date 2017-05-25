@@ -60,10 +60,10 @@ public final class R {
 		public static final int year_label_text_size = 0x7f060012;
 	}
 	public static final class id {
-		public static final int ampm_hitspace = 0x7f050065;
-		public static final int ampm_label = 0x7f050066;
+		public static final int ampm_hitspace = 0x7f050067;
+		public static final int ampm_label = 0x7f050068;
 		public static final int animator = 0x7f05002f;
-		public static final int center_view = 0x7f05005f;
+		public static final int center_view = 0x7f050061;
 		public static final int date_picker_day = 0x7f05002d;
 		public static final int date_picker_header = 0x7f050029;
 		public static final int date_picker_month = 0x7f05002c;
@@ -71,15 +71,15 @@ public final class R {
 		public static final int date_picker_year = 0x7f05002e;
 		public static final int day_picker_selected_date_layout = 0x7f05002a;
 		public static final int done = 0x7f050028;
-		public static final int done_button = 0x7f050069;
-		public static final int hour_space = 0x7f050060;
-		public static final int hours = 0x7f050062;
-		public static final int minutes = 0x7f050064;
-		public static final int minutes_space = 0x7f050063;
+		public static final int done_button = 0x7f05006b;
+		public static final int hour_space = 0x7f050062;
+		public static final int hours = 0x7f050064;
+		public static final int minutes = 0x7f050066;
+		public static final int minutes_space = 0x7f050065;
 		public static final int month_text_view = 0x7f050030;
-		public static final int separator = 0x7f050061;
-		public static final int time_picker = 0x7f050068;
-		public static final int time_picker_dialog = 0x7f050067;
+		public static final int separator = 0x7f050063;
+		public static final int time_picker = 0x7f05006a;
+		public static final int time_picker_dialog = 0x7f050069;
 	}
 	public static final class layout {
 		public static final int date_picker_dialog = 0x7f030005;

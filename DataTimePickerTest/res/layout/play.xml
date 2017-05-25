@@ -9,18 +9,14 @@
  
     
       
-  	<TextView   
-        android:id="@+id/txt1"  
-        android:layout_width="match_parent"  
-        android:layout_height="wrap_content"  
-      />  
+  	
         
     
         <EditText
 		android:id="@+id/ed1"
 		android:layout_width="240dp"
 		android:layout_height="60dp"
-		android:hint="introduction of your plan"
+		android:hint="输入IP"
 		android:gravity="left|top"
 		android:layout_marginTop="1dp"	
 		android:maxLines="4"
@@ -47,5 +43,9 @@
 		android:text="link" 
 		android:textColor="#FFFFFF"
 		/>
-
+	     
+	     
+	   
+	 
+	
 </LinearLayout>

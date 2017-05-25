@@ -33,7 +33,7 @@ namespace WindowsFormsApplication1
         private void buttonListener_Click(object sender, EventArgs e)
         {
             IPHostEntry ipe = Dns.GetHostEntry(Dns.GetHostName());
-            IPAddress ipa = ipe.AddressList[2];
+            IPAddress ipa = ipe.AddressList[ ClassVar.id ];
 
             if (textIP.Text != "如果填写0则使用默认" && textIP.Text != "")
             {
@@ -100,10 +100,16 @@ namespace WindowsFormsApplication1
         {
            
             byte[] arrSendMsg = Encoding.UTF8.GetBytes(sendMsg);
-           
-            socConnection.Send(arrSendMsg);
-           
-            txtMsg.AppendText("我发送了:" + GetCurrentTime() + "\r\n" + sendMsg + "\r\n");
+            try
+            {
+                socConnection.Send(arrSendMsg);
+                txtMsg.AppendText("我发送了:" + GetCurrentTime() + "\r\n" + sendMsg + "\r\n");
+            }
+            catch
+            {
+                txtMsg.AppendText("连接还没有成功。发送消息失败\n");
+            }
+            
         }
 
        

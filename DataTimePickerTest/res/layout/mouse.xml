@@ -20,7 +20,7 @@
 		android:id="@+id/ed1"
 		android:layout_width="240dp"
 		android:layout_height="60dp"
-		android:hint="introduction of your plan"
+		android:hint="输入你的IP"
 		android:gravity="left|top"
 		android:layout_marginTop="1dp"	
 		android:maxLines="4"
@@ -47,5 +47,29 @@
 		android:text="link" 
 		android:textColor="#FFFFFF"
 		/>
+	       <Button
+ 	        android:id="@+id/Lhit"
+ 	        android:layout_width="50dp"
+ 	        android:layout_height="85dp"
+ 	        android:layout_weight="1"
+ 	        android:background="@drawable/button_circular"
+ 	        android:padding="10dp"
+ 	       
+ 	        android:text="Lhit"
+ 	        android:textColor="#FFFFFF"
+ 	        android:textSize="18dp" />
+ 	    <Button
+ 	        android:id="@+id/Rhit"
+ 	        android:layout_width="50dp"
+ 	        android:layout_height="85dp"
+ 	        android:layout_weight="1"
+ 	        android:background="@drawable/button_circular"
+ 	        android:padding="10dp"
+ 	      
+ 	        android:text="Rhit"
+ 	        android:textColor="#FFFFFF"
+ 	        android:textSize="18dp" />
+	     
+	     
 
 </LinearLayout>

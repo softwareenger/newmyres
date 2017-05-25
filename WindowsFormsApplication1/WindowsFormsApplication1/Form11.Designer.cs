@@ -80,12 +80,13 @@
             this.TextMsg.Size = new System.Drawing.Size(180, 126);
             this.TextMsg.TabIndex = 7;
             this.TextMsg.Text = "";
+            this.TextMsg.TextChanged += new System.EventHandler(this.TextMsg_TextChanged);
             // 
             // Form11
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(302, 194);
+            this.ClientSize = new System.Drawing.Size(302, 195);
             this.Controls.Add(this.TextMsg);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textIP);

@@ -230,7 +230,7 @@ public final class R {
 		public static final int toggle_btn_unchecked = 0x7f02004c;
 	}
 	public static final class id {
-		public static final int action_settings = 0x7f05006a;
+		public static final int action_settings = 0x7f05006c;
 		public static final int always = 0x7f05000b;
 		public static final int beginning = 0x7f050011;
 		public static final int bold = 0x7f050023;

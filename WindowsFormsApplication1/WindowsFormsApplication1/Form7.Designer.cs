@@ -64,7 +64,7 @@
             this.textIP.Name = "textIP";
             this.textIP.Size = new System.Drawing.Size(172, 21);
             this.textIP.TabIndex = 2;
-            this.textIP.Text = "192.168.43.154";
+            this.textIP.Text = "如果填写0则使用默认";
             // 
             // buttonListener
             // 
@@ -136,7 +136,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(649, 393);
+            this.ClientSize = new System.Drawing.Size(649, 394);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.buttonSend);
             this.Controls.Add(this.textSendMsg);

@@ -97,7 +97,6 @@ public class Play extends Activity implements OnClickListener{
     
     Socket socket = null;  
     String buffer = "";  
-    TextView txt1;  
     Button send,link;  
     EditText ed1;  
     String geted1;  
@@ -124,7 +123,7 @@ public class Play extends Activity implements OnClickListener{
         {  
             if (msg.what == 0x11) {  
                 Bundle bundle = msg.getData();  
-                txt1.append("server:"+bundle.getString("msg")+"\n");  
+             
             }  
         }  
     };  
@@ -144,15 +143,10 @@ public class Play extends Activity implements OnClickListener{
         setContentView(R.layout.play);
         
         
-      //  user_id = (String) ((TextView)findViewById(R.id.myid)).getText();
-    
-	
+     
         
         
-       // Init();
-        
-        
-        txt1 = (TextView) findViewById(R.id.txt1);  
+       
         send = (Button) findViewById(R.id.send);  
         link = (Button) findViewById(R.id.link);  
         ed1 = (EditText) findViewById(R.id.ed1); 
@@ -224,12 +218,7 @@ public class Play extends Activity implements OnClickListener{
 	        		if(timestamp != 0){ 
 		        		
 			        	final float dT = (event.timestamp -timestamp) * NS2S;
-			        			
-			        	
-			        	
-	        			
-	        			
-				
+			        		
 	        		
 	        		}
 	        			timestamp = event.timestamp;
@@ -241,15 +230,15 @@ public class Play extends Activity implements OnClickListener{
         
       
         
-        		
-      
+       
+    	
       
         send.setOnClickListener(new OnClickListener()
         {  
             @Override  
             public void onClick(View v) {  
                 geted1 = ed1.getText().toString();  
-                txt1.append("client:"+"我开始发送坐标了"+"\n");  
+            
                 //启动线程 向服务器发送和接收信息  
                 if(now==1){
                 	now++;
@@ -308,18 +297,15 @@ public class Play extends Activity implements OnClickListener{
             bundle.clear();  
             DatagramSocket socket;  
             try {  
-                    //创建DatagramSocket对象并指定一个端口号，注意，如果客户端需要接收服务器的返回数据,  
-                    //还需要使用这个端口号来receive，所以一定要记住  
+                   
                     socket = new DatagramSocket();  
-                    //使用InetAddress(Inet4Address).getByName把IP地址转换为网络地址    
+                  
                     InetAddress serverAddress = InetAddress.getByName(IpAddress);  
-                    //Inet4Address serverAddress = (Inet4Address) Inet4Address.getByName("192.168.1.32");    
-                    String str =  txt1;//设置要发送的报文    
-                    byte data[] = str.getBytes();//把字符串str字符串转换为字节数组    
-                    //创建一个DatagramPacket对象，用于发送数据。    
-                    //参数一：要发送的数据  参数二：数据的长度  参数三：服务端的网络地址  参数四：服务器端端口号   
+                   
+                    String str =  txt1;
+                    byte data[] = str.getBytes();
                     DatagramPacket packet = new DatagramPacket(data, data.length ,serverAddress ,9876);    
-                    socket.send(packet);//把数据发送到服务端。    
+                    socket.send(packet);
                     socket.close();
                     pv++;
                 } catch (SocketException e) {  

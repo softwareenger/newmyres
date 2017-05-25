@@ -70,7 +70,7 @@
             this.textIP.Name = "textIP";
             this.textIP.Size = new System.Drawing.Size(170, 21);
             this.textIP.TabIndex = 2;
-            this.textIP.Text = "192.168.43.154";
+            this.textIP.Text = "如果填写0则使用默认";
             this.textIP.TextChanged += new System.EventHandler(this.textIP_TextChanged);
             // 
             // textPORT
@@ -174,7 +174,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(588, 379);
+            this.ClientSize = new System.Drawing.Size(588, 380);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtFileName);

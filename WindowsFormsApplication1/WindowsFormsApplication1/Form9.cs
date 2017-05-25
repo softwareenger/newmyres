@@ -37,7 +37,7 @@ namespace WindowsFormsApplication1
         {
 
             IPHostEntry ipe = Dns.GetHostEntry(Dns.GetHostName());
-            IPAddress ipa = ipe.AddressList[2];
+            IPAddress ipa = ipe.AddressList[ ClassVar.id ];
 
             if (textIP.Text != "如果填写0则使用默认" && textIP.Text != "")
             {
@@ -91,27 +91,32 @@ namespace WindowsFormsApplication1
             }
         }
 
-       
+
         /// <param name="sendMsg">发送的字符串信息</param>
-        private void ClientSendMsg(string sendMsg,int kind)
+        private void ClientSendMsg(string sendMsg, int kind)
         {
             textMsg.AppendText("我发送了:" + GetCurrentTime() + "\r\n" + sendMsg + "\r\n");
 
             byte[] arrClientMsg = Encoding.UTF8.GetBytes(sendMsg);
-         
+
             byte[] arrClientSendMsg = new byte[arrClientMsg.Length + 1];
             if (kind == 0)
             {
-                arrClientSendMsg[0] = Convert.ToByte('$');  
+                arrClientSendMsg[0] = Convert.ToByte('$');
             }
             else
             {
                 arrClientSendMsg[0] = Convert.ToByte(kind);
             }
             Buffer.BlockCopy(arrClientMsg, 0, arrClientSendMsg, 1, arrClientMsg.Length);
-
-            socketClient.Send(arrClientSendMsg);
-          
+            try
+            {
+                socketClient.Send(arrClientSendMsg);
+            }
+            catch (Exception ex)
+            {
+                textMsg.AppendText("连接还没有成功。无法发送消息。");
+            }
         }
 
      

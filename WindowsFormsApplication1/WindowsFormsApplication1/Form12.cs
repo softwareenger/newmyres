@@ -60,9 +60,9 @@ namespace WindowsFormsApplication1
         [DllImport("user32.dll")]
         static extern bool SetCursorPos(int X, int Y);
 
-        [DllImport("user32.dll")]
-        static extern void mouse_event(MouseEventFlag flags, int dx, int dy,
-            uint data, UIntPtr extraInfo);
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        private static extern int mouse_event(int dwFlags, int dx, int dy, int cButtons, int dwExtraInfo);
+       
 
         [DllImport("user32.dll")]
         static extern IntPtr FindWindow(string strClass, string strWindow);
@@ -99,7 +99,7 @@ namespace WindowsFormsApplication1
             try
             {
                 IPHostEntry ipe = Dns.GetHostEntry(Dns.GetHostName());
-                IPAddress ipa = ipe.AddressList[2];
+                IPAddress ipa = ipe.AddressList[ ClassVar.id ];
                 IP = ipa.ToString();
 
                 if (!IsUdpcRecvStart) 
@@ -115,7 +115,7 @@ namespace WindowsFormsApplication1
 
                     IsUdpcRecvStart = true;
                     txtRecvMssg.Text += "UDP监听器已成功启动\n";
-
+                    txtRecvMssg.Text += "当前IP为"+ IPAddress.Parse(IP) + "\n";
                 }
                 else                  
                 {
@@ -153,23 +153,43 @@ namespace WindowsFormsApplication1
                     string tmessage = Encoding.ASCII.GetString(
                         bytRecv, 0, bytRecv.Length);
 
-                   
+                    if (tmessage != "*" && tmessage != "/")
+                    {
                         string[] A = tmessage.Split(' ');
 
-                         dx = Convert.ToDouble(A[0]);
+                        dx = Convert.ToDouble(A[0]);
                         dy = Convert.ToDouble(A[1]);
                         SetCursorPos(Convert.ToInt32(Control.MousePosition.X - dx * v), Convert.ToInt32(Control.MousePosition.Y - dy * v));
-                    
+                    }
+                    else
+                    {
+                        
+                        if (tmessage == "*")
+                        {
+                            mouse_event(MouseEventFlag.LeftDown , 0, 0, 0, 0);
+                        }
+                        /*
+                        else
+                        {
+                            mouse_event(MouseEventFlag.RightDown | MouseEventFlag.RightUp, 0, 0, 0, 0);
+                        }
+                        */
+                    }
                     
                     
                 }
                 catch (Exception ex)
                 {
-                    ShowMessage(txtRecvMssg, "错误了");
+                    ShowMessage(txtRecvMssg, "错误了行为错误\n");
 
                     break;
                 }
             }
+        }
+
+        private void mouse_event(MouseEventFlag mouseEventFlag, int v1, int v2, int v3, int v4)
+        {
+            throw new NotImplementedException();
         }
 
         private void buttonReturn_Click(object sender, EventArgs e)

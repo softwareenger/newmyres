@@ -28,13 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.buttonReturn = new System.Windows.Forms.Button();
             this.listView1 = new System.Windows.Forms.ListView();
             this.buttonSure = new System.Windows.Forms.Button();
             this.buttonUnsure = new System.Windows.Forms.Button();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // buttonReturn
@@ -75,27 +72,11 @@
             this.buttonUnsure.UseVisualStyleBackColor = true;
             this.buttonUnsure.Click += new System.EventHandler(this.buttonUnsure_Click);
             // 
-            // timer1
-            // 
-            this.timer1.Enabled = true;
-            this.timer1.Interval = 1000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(210, 300);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(41, 12);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "label1";
-            // 
             // Form6
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(395, 333);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonUnsure);
             this.Controls.Add(this.buttonSure);
             this.Controls.Add(this.listView1);
@@ -107,7 +88,6 @@
             this.Text = "Form6";
             this.Load += new System.EventHandler(this.Form6_Load);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -117,7 +97,5 @@
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.Button buttonSure;
         private System.Windows.Forms.Button buttonUnsure;
-        private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Label label1;
     }
 }
